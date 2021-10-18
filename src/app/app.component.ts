@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FileItemService } from 'foo-swagger-client';
+import { FileItemService } from '../swagger-client';
 import { Item } from '../models/item';
 
 @Component({
