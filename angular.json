@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "foo-swagger-client": {
+      "projectType": "library",
+      "root": "projects/foo-swagger-client",
+      "sourceRoot": "projects/foo-swagger-client/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/foo-swagger-client/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/foo-swagger-client/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/foo-swagger-client/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/foo-swagger-client/src/test.ts",
+            "tsConfig": "projects/foo-swagger-client/tsconfig.spec.json",
+            "karmaConfig": "projects/foo-swagger-client/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "foo-swagger"

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FileItemService } from 'foo-swagger-client';
+import { Item } from '../models/item';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'foo-swagger';
+
+  items: Item[] = [];
+
+  constructor(
+    private fileItemService: FileItemService
+  ) {
+
+  }
+
+  onButtonTestClick() {
+    alert('aaa');
+    this.fileItemService.apiFileItemGet()
+      .subscribe((items: Item[]) => {
+        this.items = items
+      })
+  }
 }
