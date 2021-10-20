@@ -10,8 +10,7 @@
  * Do not edit the class manually.
  */
 
-
 export interface StringStringValuesKeyValuePair { 
-    readonly key?: string;
-    readonly value?: Array<string>;
+    key?: string;
+    value?: Array<string>;
 }

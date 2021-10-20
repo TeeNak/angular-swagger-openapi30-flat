@@ -22,7 +22,7 @@ Invoke-WebRequest -Uri $SPECURL -OutFile $SPECFILE
 
 docker run --rm --net=host `
   -v ${ROOTPATH}:/local `
-  swaggerapi/swagger-codegen-cli:2.4.23 `
+  swaggerapi/swagger-codegen-cli-v3:3.0.29 `
   generate `
   -i /local/$SPECFILE `
   -l typescript-angular `
